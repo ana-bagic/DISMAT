@@ -5,8 +5,8 @@ import java.util.Queue;
 
 public class Graf {
 
-	private int n;
-	private int[][] MS;
+	private final int n;
+	private final int[][] MS;
 	
 	Graf(int n, int[][] MS) {
 		this.n = n;
@@ -18,20 +18,20 @@ public class Graf {
 
 	    for(int i = 0; i < n; ++i) {
 	      
-	    	int lengths[] = new int[n];
+	    	int[] lengths = new int[n];
 	    	for (int j = 0; j < n; ++j) {
 	        	lengths[j] = Integer.MAX_VALUE;
 	        }
 	        lengths[i] = 0;
 	        
-	        //  posjeceni vrhovi
-	        int parents[] = new int[n];
+	        // posjeceni vrhovi
+	        int[] parents = new int[n];
 	        for (int j = 0; j < n; ++j) {
 	        	parents[j] = -1;
 	        }
 	        
-	        //  susjedstvo od trenutne tocke
-	        Queue<Integer> queue = new LinkedList<Integer>();
+	        // susjedstvo od trenutne tocke
+	        Queue<Integer> queue = new LinkedList<>();
 	        queue.add(i);
 
 	        while(!queue.isEmpty()) {
@@ -39,12 +39,12 @@ public class Graf {
 
 	            // svi susjedi trenutne tocke
 	            for(int j = 0; j < n; ++j) {
-	                //  trenutna tocka i tocka su susjedi
+	                // trenutna tocka i tocka su susjedi
 	                if(MS[j][current] == 1) {
 	                    if(lengths[j] == Integer.MAX_VALUE) {
-	                        //  duljina od pocetne tocke do susjedne tocke
+	                        // duljina od pocetne tocke do susjedne tocke
 	                        lengths[j] = lengths[current] + 1;
-	                        //  susjedne tocke u red
+	                        // susjedne tocke u red
 	                        queue.add(j);
 	                        parents[j] = current;
 	                    }

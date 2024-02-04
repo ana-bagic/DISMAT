@@ -32,7 +32,5 @@ public class Main {
 		
 		graf.close();
 		sc.close();
-		
-		return;
 	}
 }
