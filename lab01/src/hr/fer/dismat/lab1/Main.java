@@ -28,8 +28,6 @@ public class Main {
 		System.out.println("Vrijednost n-tog clana niza iz rekurzije: " + niz.nClanRekurzija(n));
 		
 		sc.close();
-		
-		
 	}
 	
 }
