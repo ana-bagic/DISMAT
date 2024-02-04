@@ -2,8 +2,8 @@ package hr.fer.dismat.lab3;
 
 public class Graf {
 
-	private int n;
-	private int[][] MS;
+	private final int n;
+	private final int[][] MS;
 	
 	Graf(int n, int[][] MS) {
 		this.n = n;
@@ -53,35 +53,4 @@ public class Graf {
 		
 		return krom;
 	}
-	
-	/*
-	int krom() {
-		
-		int[] vrhovi = new int[n];
-		int boja;
-		int krom = 0;
-		
-		for (int i = 0; i < n; ++i) {
-			vrhovi[i] = 0;
-		}
-		
-		for (int i = 0; i < n; ++i) {
-			boja = 1;
-			
-			for (int j = 0; j < i; ++j) {
-				if(MS[i][j] == 1 && vrhovi[j] == boja) {
-					++boja;
-					j = 0;
-				}		
-			}
-		
-			if(boja > krom)
-				++krom;
-			
-			vrhovi[i] = boja;
-		}
-		
-		return krom;
-	}
-	*/
 }
